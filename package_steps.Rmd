@@ -76,8 +76,6 @@ devtools::document()
 
 ```{r}
 usethis::use_git()
-
-
 ```
 
 ### Step 7: Uploading to Github
@@ -95,6 +93,12 @@ use_readme_rmd()
 
 ```{r}
 use_github(protocol = "https://github.com/aldee153/DEr.git", auth_token = "74fbb4117ebe4ab4a7c09ab0508e1ba8a7fbcac4")
+```
+
+Install package
+
+```{r}
+devtools::install_github("aldee153/DEr", auth_token = "74dd77ac3753370afbe7f67d8725469149508cd4")
 ```
 
 
