@@ -1,0 +1,105 @@
+---
+title: "Package Steps"
+author: Allan Butler
+output: github_document
+---
+
+### Step 1: Creating the package
+
+```{r}
+library(devtools)
+library(roxygen2)
+library(usethis)
+library(lubridate)
+
+path <- file.path('C:/Users/butlea19/OneDrive - Centrica/Documents', "DEr")
+create_package(path)
+#or
+create_package("DEr")
+```
+
+### Step 2: Adding Functions
+
+```{r}
+use_r("DE_functions")
+```
+
+Try function
+
+```{r}
+ImportPeaceData(StartTime = '2018-12-01')
+```
+
+### Step 3: Adding Function Documentation
+
+```{r}
+#' @title ImportPeaceData
+#'
+#' @description This function allows you import Peace customer data from the ODS.ODS_RO.vw_us_account_base.
+#' @param
+#' @keywords Peace customers
+#' @export
+#' @examples
+#' ImportPeaceData()
+```
+
+```{r}
+document()
+```
+
+```{r}
+install()
+```
+
+Now try searching for your new function, here’s what I receive when I type
+```{r}
+?ImportPeaceData
+```
+
+### Step 4: Editing your Description
+
+```{r}
+use_cc0_license("Allan Butler")
+```
+
+### Step 5: Add package documentation
+
+```{r}
+usethis:: use_package_doc()
+```
+
+```{r}
+devtools::document()
+```
+
+### Step 6: Adding a Git repo
+
+```{r}
+usethis::use_git()
+
+
+```
+
+### Step 7: Uploading to Github
+
+```{r}
+browse_github_pat()
+```
+
+
+### Step 8: Adding a Readme
+
+```{r}
+use_readme_rmd()
+```
+
+```{r}
+use_github(protocol = "https://github.com/aldee153/DEr.git", auth_token = "74fbb4117ebe4ab4a7c09ab0508e1ba8a7fbcac4")
+```
+
+
+### Step 9 Adding a logo
+
+```{r}
+use_logo("logo file path")
+```
