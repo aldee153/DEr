@@ -10,7 +10,7 @@
 ImportEvergreenData <- function(
   LatestRatePlanGroup = 'Evergreen',
   StartTime = '2018-01-01',
-  EndTime = '2018-12-01'){
+  EndTime = '2018-12-31'){
 
   Con <- DBI::dbConnect(odbc::odbc(),
                         driver =  "{SQL Server};",
